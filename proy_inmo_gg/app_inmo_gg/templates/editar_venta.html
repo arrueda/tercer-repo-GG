@@ -1,0 +1,76 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+
+
+<main>
+    
+    <h3 class="text-uppercase text-center">Edición de registros de propiedades en venta</h3>
+
+
+
+
+    <h6 class="text-uppercase">Edición de registros de propiedades.</h6>
+<form action="{% url 'editar_venta' editar_v.id %}" method="POST">
+    {% csrf_token %}
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Tipo:</span>
+        <input type="text" name={{formula_v.tipo_prop_v}}>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Localidad:</span>
+        <input type="text" name={{formula_v.localidad_v}}>
+    </div>
+    
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Barrio:</span>
+        <input type="text" name={{formula_v.barrio_v}}>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Cant. dormitorios:</span>
+        <input type="text" name={{formula_v.cant_dormi_v}}>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Estado (vendido/no vendido):</span>
+        <input type="text" name={{formula_v.estado_v}}>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Otros (text):</span>
+        <input type="text" name={{formula_v.otro_cha_v}}>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Otro número:</span>
+        <input type="text" name={{formula_v.otro_ent_v}}>
+    </div>
+
+    <div class="form group">
+        <button class="btn btn-success">Enviar</button>
+    </div>
+
+    <br>
+
+    <div>
+
+        <a class="btn btn-primary" href="http://127.0.0.1:8000/app_inmo_gg/">  Ir a inicio</a>
+        
+    </div>
+
+</form>
+
+
+   
+</main>
+
+
+
+    <h1>{{ datos_v }}</h1>
+
+{% endblock %}

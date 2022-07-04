@@ -1,0 +1,30 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<html>
+<body>
+    
+    <h2>Dar de alta un perfil</h2>
+    <br>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Enviar</button>
+
+        <a class="btn btn-primary" href="http://127.0.0.1:8000/app_inmo_gg/">    Inicio</a>
+    </form>
+    
+
+       
+    
+
+</body>
+</html>
+
+{% endblock %}
